@@ -11,14 +11,13 @@
 
 <body>
   <div id='search-form'>
-
-      Search:
       <input id="search-box" type="text" placeholder="Search Anything">
-      <button id='submit-box'type="submit" onclick="displayWikiResults()">Submit</button>
-
+      <button id='submit-box' type="submit" onclick="displayWikiResults()">Search</button>
+      <button id='submit-box' onclick="location.href='https://en.wikipedia.org/wiki/Special:Random'">Get me OUT! >.<</button>
   </div>
-  <div id='result-box'>
-
+  <div id='error-box'>
+  </div>
+  <div id='render-box'>
   </div>
   <script src='script.js'></script>
 </body>
