@@ -10,14 +10,17 @@
 </head>
 
 <body>
-  <div id='search-form'>
+  <div id='main'>
+    <div id='search-form'>
       <input id="search-box" type="text" placeholder="Search Anything">
-      <button id='submit-box' type="submit" onclick="displayWikiResults()">Search</button>
-      <button id='submit-box' onclick="location.href='https://en.wikipedia.org/wiki/Special:Random'">Get me OUT! >.<</button>
-  </div>
-  <div id='error-box'>
-  </div>
-  <div id='render-box'>
+      <button id='submit-btn' type="submit" onclick="displayWikiResults()">Search</button>
+      <button  onclick="location.href='https://en.wikipedia.org/wiki/Special:Random'">Get me OUT! >.<</button>
+    </div>
+    <div id='error-box'>
+    </div>
+    <div id='render-box'>
+
+    </div>
   </div>
   <script src='script.js'></script>
 </body>

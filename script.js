@@ -1,14 +1,19 @@
 const list =  document.querySelector('#render-box');
 const error = document.querySelector('#error-box');
+const searchForm = document.querySelector('#search-form');
+const renderBox = document.querySelector('#render-box');
 
 document.addEventListener('keypress', event => {
   var key = event.which || event.keyCode;
     if (key === 13) { // 13 is enter
-      displayWikiResults()
+      displayWikiResults();
     }
 });
 
+
 function displayWikiResults() {
+  searchForm.style.margin = "5% auto 0 auto";
+  renderBox.style.opacity = "1";
   reset();
   const listOfData = [];
   let query = document.querySelector('#search-box').value;
@@ -31,7 +36,9 @@ function reset(){
 function renderResults(data){
   const dataRender =  data.map(result => `
       <div class='result-box'>
-         <h3 class='result-title' data-key="${result.pageid}">${result.title}</h3>
+         <h3 class='result-title'
+           onclick="location.href='https://en.wikipedia.org/?curid=${result.pageid}'" data-key="${result.pageid}">${result.title}
+         </h3>
          <p class='result-extract'>${result.extract}</p>
     </div>`).join('');
     list.innerHTML = dataRender;
