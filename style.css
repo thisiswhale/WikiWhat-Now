@@ -51,7 +51,11 @@ button{
   border: none;
   padding: 5px 10px;
 }
-
+#render-box{
+  opacity: 0;
+  -webkit-transition: opacity 0.75s ease-in-out; /* Safari */
+    transition: opacity 0.75s ease-in-out;
+}
 .result-box {
   background-color: #9f77a8;
   color:white;
@@ -59,9 +63,7 @@ button{
   margin: 20px;
   border-radius: 7px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  opacity: 0;
-  -webkit-transition: opacity 0.75s; /* Safari */
-    transition: opacity 0.75s;
+
 }
 .result-box h3:hover{
   text-decoration: underline;

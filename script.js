@@ -6,6 +6,7 @@ const renderBox = document.querySelector('#render-box');
 document.addEventListener('keypress', event => {
   var key = event.which || event.keyCode;
     if (key === 13) { // 13 is enter
+      event.preventDefault();
       displayWikiResults();
     }
 });
@@ -13,7 +14,6 @@ document.addEventListener('keypress', event => {
 
 function displayWikiResults() {
   searchForm.style.margin = "5% auto 0 auto";
-  renderBox.style.opacity = "1";
   reset();
   const listOfData = [];
   let query = document.querySelector('#search-box').value;
@@ -29,6 +29,7 @@ function displayWikiResults() {
 
 }
 function reset(){
+  document.querySelector('#render-box').style.opacity = "0";
   list.innerHTML = "";
   error.innerHTML = "";
 
@@ -42,6 +43,7 @@ function renderResults(data){
          <p class='result-extract'>${result.extract}</p>
     </div>`).join('');
     list.innerHTML = dataRender;
+    document.querySelector('#render-box').style.opacity = "1";
 }
 
 
