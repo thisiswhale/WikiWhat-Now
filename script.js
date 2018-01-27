@@ -11,7 +11,6 @@ document.addEventListener('keypress', event => {
     }
 });
 
-
 function displayWikiResults() {
   searchForm.style.margin = "5% auto 0 auto";
   reset();
@@ -28,12 +27,14 @@ function displayWikiResults() {
     error.innerHTML = `<p>Error: Type something!!!</p>`;console.log(err)});
 
 }
+
 function reset(){
   document.querySelector('#render-box').style.opacity = "0";
   list.innerHTML = "";
   error.innerHTML = "";
 
 }
+
 function renderResults(data){
   const dataRender =  data.map(result => `
       <div class='result-box'>
@@ -45,26 +46,3 @@ function renderResults(data){
     list.innerHTML = dataRender;
     document.querySelector('#render-box').style.opacity = "1";
 }
-
-
-//this method works also
-//
-// function displayWikiResults() {
-//
-//   let query = document.querySelector('#search-box').value;
-//   let url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&prop=extracts&generator=prefixsearch&exchars=700&exlimit=10&exintro=1&explaintext=1&gpsnamespace=0&gpslimit=10&gpssearch=pokemon" //+query;
-//   fetch(url).then(response => response.json()).then(data => {
-//     let listOfData = data.query.pages;
-//     for(let key in listOfData){
-//       let title = document.createElement('h3');
-//       title.setAttribute('class', 'result-title');
-//       title.setAttribute('data-key',listOfData[key].pageid);
-//       title.innerHTML = listOfData[key].title;
-//
-//       document.querySelector("#result-box").appendChild(title);
-//       // listOfData[key].pageid
-//       // listOfData[key].title
-//       // listOfData[key].extract
-//     }
-//   }).catch(err => console.log(err));
-//}
